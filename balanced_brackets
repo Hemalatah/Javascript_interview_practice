@@ -1,0 +1,25 @@
+function balanced_brackets(str) {
+  var opening = ['(', '{', '['];
+  var closing = [')', '}', ']'];
+  var stack_arr = [];
+  for(var i = 0; i < str.length; i++) {
+    if (opening.indexOf(str[i]) != -1) {
+      stack_arr.push(str[i]);
+    }
+    else {
+      var last = stack_arr[stack_arr.length-1];
+      if (stack_arr.length === 0) {
+        return false;
+      }
+      else {
+        if (opening.indexOf(last) == closing.indexOf(str[i])) {
+          stack_arr.pop();
+        }
+      }
+    }
+  }
+  return stack_arr.length === 0 ? true : false;
+}
+
+console.log(balanced_brackets('())[]{}'));
+
