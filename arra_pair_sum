@@ -1,0 +1,13 @@
+function array_pair_sum(num, arr) {
+  var result_array = []
+  for(var i = 0; i < arr.length; i++) {
+    for(var j = 1; j < arr.length; j++) {
+      if(i != j & i < j & (arr[i]+arr[j]) == num) {
+        result_array.push([arr[i], arr[j]]);
+      }
+    }
+  }
+  return result_array;
+}
+
+console.log(array_pair_sum(8, [3, 4, 5, 4, 4]));
