@@ -1,0 +1,16 @@
+function even_element_in_the_array(arr) {
+  var hash = {};
+  
+  arr.forEach(function(num) {
+    hash[num] = hash[num] + 1 || 1;
+  })
+  
+  for(var i in hash) {
+    if(hash[i] % 2 === 0) {
+      return Number(i);
+    }
+  }
+  return false;
+}
+
+console.log(even_element_in_the_array([2,3,4,4,5]));
